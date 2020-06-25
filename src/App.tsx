@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
-import { Button, ButtonTypes } from "src/lib/components";
+import { Button, ButtonTypes } from "@shared-components/";
 import './App.css';
 
 function App() {
@@ -25,7 +25,11 @@ function App() {
           Learn React
         </a>
 
-        <Button content="MADARA" type={ButtonTypes.Primary} onClick={ () => onClickHandler()} />
+        <Button content="Menu" type={ButtonTypes.Primary} onClick={ () => onClickHandler()} />
+        <br></br>
+        <Button content="Proceed to Checkout" type={ButtonTypes.Secondary} onClick={ () => onClickHandler()} />
+        <br></br>
+        <Button content="Proceed to Checkout" type={ButtonTypes.Custom} onClick={ () => onClickHandler()} />
       </header>
     </div>
   );

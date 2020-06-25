@@ -15,12 +15,44 @@ interface StyledButtonProps {
 
 const PrimaryButton = styled.button<StyledButtonProps>`
     background-color: ${({ isHovering }) => isHovering ? colors.none : colors.primaryGreen};
+    color: ${ colors.white };
+    font-family: 'Arial';
+    text-transform: capitalize;
+    padding: 10px 30px;
+    border-radius: 50px;
+    border: solid 2px ${ colors.white };
+    cursor: pointer;
+    letter-spacing: 1px;
+`;
+
+const SecondaryButton = styled.button<StyledButtonProps>`
+    background-color: ${({ isHovering }) => isHovering ? colors.none : colors.white};
+    color: ${({ isHovering }) => isHovering ? colors.white : colors.black};
+    font-family: 'Arial';
+    text-transform: capitalize;
+    padding: 10px 30px;
+    border-radius: 50px;
+    border: solid 2px ${ colors.white };
+    cursor: pointer;
+    letter-spacing: 1px;
+`;
+
+const CustomButton = styled.button<StyledButtonProps>`
+    background-color: ${({ isHovering }) => isHovering ? colors.primaryBlue : colors.none};
+    color: ${({ isHovering }) => isHovering ? colors.white : colors.primaryBlue};
+    font-family: 'Arial';
+    text-transform: capitalize;
+    padding: 10px 30px;
+    border-radius: 50px;
+    border: solid 2px ${ colors.primaryBlue };
+    cursor: pointer;
+    letter-spacing: 1px;
 `;
 
 const buttonComponentMapping = {
     [ButtonTypes.Primary]: PrimaryButton,
-    [ButtonTypes.Secondary]: PrimaryButton,
-    [ButtonTypes.Custom]: PrimaryButton
+    [ButtonTypes.Secondary]: SecondaryButton,
+    [ButtonTypes.Custom]: CustomButton
 };
 
 interface IButtonProps {
