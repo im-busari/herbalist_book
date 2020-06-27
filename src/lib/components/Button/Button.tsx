@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from "styled-components";
 
-import { colors } from '../../constants'
+import { colors } from '@shared-constants/'
 
 enum ButtonTypes {
     Primary = "primary",

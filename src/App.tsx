@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import { Button, ButtonTypes } from "@shared-components/";
+import { Text, TextTypes } from "@shared-components/";
+import { colors } from "@shared-constants/";
 import './App.css';
 
 function App() {
@@ -12,18 +14,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+
+        {/* Testing Components */}
+
+        <Text content="My Text" color={colors.primaryBlue} type={TextTypes.Subtitle} />
+        <Text content="My Title" type={TextTypes.Jumbotron} />
 
         <Button content="Menu" type={ButtonTypes.Primary} onClick={ () => onClickHandler()} />
         <br></br>
