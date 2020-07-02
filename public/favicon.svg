@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="76" viewBox="0 0 192 76">
+  <g id="LOGO" transform="translate(-1289 -1378)">
+    <g id="mug" transform="translate(1439.676 1412.336)">
+      <g id="Group_4" data-name="Group 4" transform="translate(0.594 0.594)">
+        <circle id="Ellipse_3" data-name="Ellipse 3" cx="19.638" cy="19.638" r="19.638" fill="#f9f7f8"/>
+        <path id="Path_29" data-name="Path 29" d="M91.3,70.225l.878-.878a2.505,2.505,0,0,0,0-3.543l-.66-.66a2.505,2.505,0,0,0-3.543,0l-.878.878a15.216,15.216,0,1,0,4.2,4.2Z" transform="translate(-59.023 -59.024)" fill="#efedef"/>
+        <path id="Path_30" data-name="Path 30" d="M344.05,99.52l1.838-1.838a.92.92,0,0,0,0-1.3l-.66-.66a.92.92,0,0,0-1.3,0l-1.838,1.838-1.867,1.961,1.893,1.924Z" transform="translate(-313.853 -88.48)" fill="#c9bfc8"/>
+        <circle id="Ellipse_4" data-name="Ellipse 4" cx="13.618" cy="13.618" r="13.618" transform="translate(6.02 6.02)" fill="#f9f7f8"/>
+        <g id="Group_3" data-name="Group 3" transform="translate(8.398 8.398)">
+          <circle id="Ellipse_5" data-name="Ellipse 5" cx="11.24" cy="11.24" r="11.24" fill="#388e3c"/>
+        </g>
+        <path id="Path_31" data-name="Path 31" d="M117.7,124.7a11.262,11.262,0,0,1,9.121-11.039,11.24,11.24,0,1,0,0,22.079A11.262,11.262,0,0,1,117.7,124.7Z" transform="translate(-105.061 -105.061)" fill="#388e3c"/>
+      </g>
+      <g id="Group_5" data-name="Group 5" transform="translate(0 0)">
+        <path id="Path_32" data-name="Path 32" d="M38.2,10.928A20.416,20.416,0,0,0,32.168,3.9a.594.594,0,0,0-.7.959,19.221,19.221,0,0,1,5.68,6.62,19.046,19.046,0,0,1-16.914,27.8A19.043,19.043,0,0,1,6.766,6.766,19.052,19.052,0,0,1,29.392,3.533a.594.594,0,1,0,.573-1.042A20.22,20.22,0,1,0,38.2,10.928Z" transform="translate(0 0)"/>
+        <path id="Path_33" data-name="Path 33" d="M103.433,79.084a1.5,1.5,0,0,0-.444-1.071l-.66-.66a1.516,1.516,0,0,0-2.142,0l-1.47,1.47a14.19,14.19,0,0,0-18.925,1.641.594.594,0,1,0,.868.812,12.989,12.989,0,1,1-1.485,1.915.594.594,0,0,0-1-.638,14.216,14.216,0,1,0,23.347-.927l1.47-1.47A1.5,1.5,0,0,0,103.433,79.084Zm-1.284.23L100.76,80.7a14.34,14.34,0,0,0-1.121-1.121l1.388-1.388a.326.326,0,0,1,.461,0l.66.66a.326.326,0,0,1,0,.461Z" transform="translate(-69.939 -69.939)"/>
+        <path id="Path_34" data-name="Path 34" d="M117.794,129.628a11.835,11.835,0,1,0-11.835-11.835A11.848,11.848,0,0,0,117.794,129.628Zm0-22.48a10.646,10.646,0,1,1-10.646,10.646A10.658,10.658,0,0,1,117.794,107.148Z" transform="translate(-97.561 -97.561)"/>
+        <path id="Path_35" data-name="Path 35" d="M181.689,167.1v1.005a.594.594,0,1,0,1.189,0V167.1a6.288,6.288,0,0,0,3.454-1.45.594.594,0,0,0-.766-.909,5.1,5.1,0,0,1-2.688,1.163v-9.43a.594.594,0,1,0-1.189,0v9.43a5.1,5.1,0,0,1-4.5-5.059c0-1.88,2.58-5.187,5-7.654a.14.14,0,0,1,.2,0c2.415,2.467,5,5.774,5,7.654a5.055,5.055,0,0,1-.436,2.063.594.594,0,0,0,1.087.482,6.238,6.238,0,0,0,.539-2.545c0-2.641-3.342-6.45-5.334-8.486a1.329,1.329,0,0,0-1.9,0,36.34,36.34,0,0,0-3.165,3.681c-1.44,1.96-2.17,3.577-2.17,4.8A6.292,6.292,0,0,0,181.689,167.1Z" transform="translate(-162.052 -139.92)"/>
+        <path id="Path_36" data-name="Path 36" d="M317.746,161.925a8.344,8.344,0,0,1,2.248,2.8.594.594,0,1,0,1.067-.524,9.541,9.541,0,0,0-2.57-3.207.594.594,0,0,0-.745.927Z" transform="translate(-292.36 -148.118)"/>
+        <path id="Path_37" data-name="Path 37" d="M147.712,297.63a9.54,9.54,0,0,0,2.57,3.207.594.594,0,1,0,.745-.926,8.345,8.345,0,0,1-2.248-2.8.594.594,0,1,0-1.067.524Z" transform="translate(-135.949 -273.253)"/>
+      </g>
+    </g>
+    <text id="HerbalIst" transform="translate(1385 1404)" fill="#fff" font-size="25" font-family="Roboto-Medium, Roboto" font-weight="500" letter-spacing="0.3em"><tspan x="-95.375" y="0">HERBALIST</tspan></text>
+    <g id="Rectangle_3" data-name="Rectangle 3" transform="translate(1289 1413)" fill="#388e3c" stroke="#fff" stroke-width="3">
+      <rect width="132" height="41" stroke="none"/>
+      <rect x="1.5" y="1.5" width="129" height="38" fill="none"/>
+    </g>
+    <text id="Book" transform="translate(1355 1442)" fill="#fff" font-size="25" font-family="Roboto-Medium, Roboto" font-weight="500" letter-spacing="0.3em"><tspan x="-44.276" y="0">BOOK</tspan></text>
+  </g>
+</svg>

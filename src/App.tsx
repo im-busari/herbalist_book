@@ -1,32 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Button, ButtonTypes } from "@shared-components/";
-import { Text, TextTypes } from "@shared-components/";
-import { colors } from "@shared-constants/";
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+
+import Home from './anom/Home/Home';
+import Shop from './anom/Shop/Shop';
+
+import { Footer } from './layout/Footer/Footer';
+import { Contacts } from './anom/Contacts/Contacts';
+import { Basket } from './anom/Basket/Basket';
 
 function App() {
-  
-  function onClickHandler() {
-    console.log("clicked")
-  }
 
   return (
-    <div className="App">
-      <header className="App-header">
+    
+    <Router>
+      <div>
+        
+        <Switch>
 
-        {/* Testing Components */}
+          <Route exact path="/" component={ Home } />
+          <Route path="/shop" component={ Shop } />
+          <Route path="/contacts" component={ Contacts } />
+          <Route path="/basket" component={ Basket } />
 
-        <Text content="My Text" color={colors.primaryBlue} type={TextTypes.Subtitle} />
-        <Text content="My Title" type={TextTypes.Jumbotron} />
+        </Switch>
 
-        <Button content="Menu" type={ButtonTypes.Primary} onClick={ () => onClickHandler()} />
-        <br></br>
-        <Button content="Proceed to Checkout" type={ButtonTypes.Secondary} onClick={ () => onClickHandler()} />
-        <br></br>
-        <Button content="Proceed to Checkout" type={ButtonTypes.Custom} onClick={ () => onClickHandler()} />
-      </header>
-    </div>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
