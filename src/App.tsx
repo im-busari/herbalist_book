@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Home from './anom/Home/Home';
 import Shop from './anom/Shop/Shop';
+import ProductDetails from './anom/ProductDetails/ProductDetails';
 
 import { Footer } from './layout/Footer/Footer';
 import { Contacts } from './anom/Contacts/Contacts';
@@ -18,7 +19,8 @@ function App() {
         <Switch>
 
           <Route exact path="/" component={ Home } />
-          <Route path="/shop" component={ Shop } />
+          <Route exact path="/shop" component={ Shop } />
+          <Route path="/shop/:id" component={ ProductDetails } />
           <Route path="/contacts" component={ Contacts } />
           <Route path="/basket" component={ Basket } />
 
