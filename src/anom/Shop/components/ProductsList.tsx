@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
+import { useSelector, useDispatch } from 'react-redux';
+import { listProducts, IState } from '../../../Store';
 import axios from 'axios';
+
+import styled from 'styled-components';
 
 import { ProductsItem, Filter } from './'
 
@@ -11,7 +14,7 @@ const ProductsListBody = styled.div`
     padding: 1vh 10%;
     margin-top: 50px;
 `
-interface Product {
+interface IProduct {
     _id: string;
     image: string;
     price: number;
@@ -20,20 +23,27 @@ interface Product {
     description: string;
 }
 
-const ProductsList = () => {
 
-    const [products, setProduct ] = useState<Product[]>([]);
+const ProductsList = () => {
+    const productList = useSelector((state: IState) => state.productsList);
+    const { loading, products, error } = productList;
+
+    const dispatch = useDispatch();
+    
+
+//    const [products, setProduct ] = useState<Product[]>([]);
 
     useEffect(() => {
-        const fetchProducts = async () => {
-            const { data } = await axios.get("/api/products");
-            setProduct(data);
-        }
-        fetchProducts()
+        dispatch(listProducts())
+        // const fetchProducts = async () => {
+        //     const { data } = await axios.get("/api/products");
+        //     setProduct(data);
+        // }
+        // fetchProducts()
         return () => {
             //
         }
-    }, [ products ])
+    }, [])
 
     return (
         <ProductsListBody>
@@ -41,7 +51,7 @@ const ProductsList = () => {
             <Filter />
 
             <div className="row justify-content-center mt-5">
-                    { products.length > 0 && products.map(product => 
+                    { products.length > 0 && products.map((product: IProduct) => 
                     <ProductsItem
                         image={ product.image }
                         name={ product.name }
