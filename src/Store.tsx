@@ -1,68 +1,32 @@
-import { Reducer, createStore, combineReducers, compose, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-import axios from "axios";
+import { Store, createStore, applyMiddleware } from 'redux'
+import createSagaMiddleware from 'redux-saga'
+// `react-router-redux` is deprecated, so we use `connected-react-router`.
+// This provides a Redux middleware which connects to our `react-router` instance.
+import { routerMiddleware } from 'connected-react-router'
+// We'll be using Redux Devtools. We can use the `composeWithDevTools()`
+// directive so we can pass our middleware along with it
+import { composeWithDevTools } from 'redux-devtools-extension'
+// If you use react-router, don't forget to pass in your history type.
+import { History } from 'history'
 
-export interface IState {
-    productsList: {
-        products: [],
-        loading: boolean,
-        error: []
-    }
+// Import the state interface and our combined reducers/sagas.
+import { ApplicationState, createRootReducer, rootSaga } from './store/index'
+
+export default function configureStore(history: History, initialState: ApplicationState): Store<ApplicationState> {
+  // create the composing function for our middlewares
+  const composeEnhancers = composeWithDevTools({})
+  // create the redux-saga middleware
+  const sagaMiddleware = createSagaMiddleware()
+
+  // We'll create our store with the combined reducers/sagas, and the initial Redux state that
+  // we'll be passing from our entry point.
+  const store = createStore(
+    createRootReducer(history),
+    initialState,
+    composeEnhancers(applyMiddleware(routerMiddleware(history), sagaMiddleware))
+  )
+
+  // Don't forget to run the root saga, and return the store object.
+  sagaMiddleware.run(rootSaga)
+  return store
 }
-
-interface IAction {
-    type: string,
-    payload: any,
-}
-
-interface IReducer {
-    products: []
-    loading: boolean,
-    error: []
-}
-
-
-const initialState : IReducer = {
-    products: [],
-    loading: false,
-    error: []
-}
-
-
-const productListReducer: Reducer<IReducer> = (state = initialState , action: IAction) => {
-
-    switch (action.type) {
-        case "PRODUCT_LIST_REQUEST":
-            return { products: [], loading: true, error: [] };
-        case "PRODUCT_LIST_SUCCESS":
-            return  { products: action.payload, loading: false, error: [] };
-        case "PRODUCT_LIST_FAIL":
-            return  { products: [], loading: false, error: action.payload };
-        default:
-            return state;
-    }    
-}
-
-export const listProducts = () => async (dispatch: any) => {
-    try {
-        dispatch({ type: "PRODUCT_LIST_REQUEST" });
-        const { data } = await axios.get("/api/products")
-
-        dispatch({type: "PRODUCT_LIST_SUCCESS", payload: data })
-
-    } catch (error) {
-
-        dispatch({ type: "PRODUCT_LIST_FAIL", payload: error.message })
-        
-    }
-}
-
-const reducer = combineReducers<IState>({
-    productsList: productListReducer,
-})
-
-const composeEnhancer = compose; //window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ||
-
-const store = createStore(reducer, initialState, composeEnhancer(applyMiddleware(thunk)));
-
-export default store;
