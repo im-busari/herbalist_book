@@ -1,14 +1,10 @@
 import React from 'react';
-import { Underline, UnderlineTypes, Button, ButtonTypes } from 'src/lib/components';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { Underline, UnderlineTypes, Button, ButtonTypes } from 'src/lib/components';
 import { colors } from '@shared-constants/';
 
-interface IProductsItemProps {
-    image: string,
-    name: string,
-    price: number,
-    description: string,
-}
+import { IProduct } from '../../../store/products/types'
 
 const ProductCard = styled.div`
     background-color: ${ colors.white };
@@ -30,7 +26,7 @@ const ProductCard = styled.div`
 `
 
 
-const ProductsItem : React.FC<IProductsItemProps> = ({ image, name, price, description}) => {
+const ProductsItem : React.FC<IProduct> = ({ image, name, price, description, _id}) => {
     
     function btnHandler() {
         console.log("BTN CLICKED.")
@@ -57,8 +53,8 @@ const ProductsItem : React.FC<IProductsItemProps> = ({ image, name, price, descr
                             <p className="card-text"> { description } </p>
                         </div>
                         <div className="row mt-3 mr-3">
-                            <Button content="Learn More" type={ ButtonTypes.Info } className="mr-auto" onClick={ btnHandler } />
-                            <Button content="Add to cart" type={ ButtonTypes.Success } className="mr-auto" onClick={ btnHandler } />
+                            <Link to={`/shop/${ _id }/`} className="mx-auto"><Button content="Learn More" type={ ButtonTypes.Info } className="mr-auto" onClick={ btnHandler } /></Link>
+                            <Link to="/" className="mx-auto"><Button content="Add to cart" type={ ButtonTypes.Success } className="mr-auto" onClick={ btnHandler } /></Link>
                         </div>
                     </div>
                 </div>

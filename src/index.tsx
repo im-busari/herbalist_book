@@ -13,12 +13,15 @@ import { ApplicationState } from './store/index';
 
 const history = createBrowserHistory()
 
+const defaultValues = {
+  data: [],
+  errors: undefined,
+  loading: false
+}
+
 const initialState : ApplicationState = {
-  products: {
-    data: [],
-    errors: undefined,
-    loading: false
-  }
+  productsList: defaultValues,
+  productsDetails: defaultValues
 }
 const store = configureStore(history, initialState)
 

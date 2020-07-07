@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { ApplicationState } from '../../store/index'
 
 const ProductDetails = (props: { match: { params: { id: any; }; }; }) => {
 
