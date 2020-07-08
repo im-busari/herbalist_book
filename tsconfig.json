@@ -23,6 +23,7 @@
       "paths": {
         "@shared-components/*": ["src/lib/components/"],
         "@shared-constants/*": ["src/lib/constants/"],
+        "@store/*": ["src/store/"],
         "@layout/*": ["src/layout/"],
       }
   },

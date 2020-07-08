@@ -17,7 +17,6 @@ const JumbotronBody = styled.div`
     padding: 1vh 10%;
 
     .h-text {
-        text-align: center;
         position: absolute;
         text-transform: uppercase;
         font-size: 3.5rem;

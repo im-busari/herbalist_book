@@ -1,18 +1,14 @@
 import React from 'react';
-import { Underline, UnderlineTypes, Button, ButtonTypes } from 'src/lib/components';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { Underline, UnderlineTypes, Button, ButtonTypes } from 'src/lib/components';
 import { colors } from '@shared-constants/';
 
-interface IProductsItemProps {
-    image: string,
-    name: string,
-    price: number,
-    description: string,
-}
+import { IProduct } from '../../../store/products/types'
 
 const ProductCard = styled.div`
     background-color: ${ colors.white };
-    height: 200px;
+    height: auto;
     width: 500px;
 
     img { height: 200px; }
@@ -30,7 +26,7 @@ const ProductCard = styled.div`
 `
 
 
-const ProductsItem : React.FC<IProductsItemProps> = ({ image, name, price, description}) => {
+const ProductsItem : React.FC<IProduct> = ({ image, name, price, description, _id}) => {
     
     function btnHandler() {
         console.log("BTN CLICKED.")
@@ -38,12 +34,12 @@ const ProductsItem : React.FC<IProductsItemProps> = ({ image, name, price, descr
 
 
     return (
-        <ProductCard className="shadow-sm m-3">
+        <ProductCard className="shadow-sm m-3" key={_id}>
             <div className="row no-gutters">
-                <div className="col-auto">
+                <div className="col-lg-4 col-sm-12 text-center">
                     <img src={ image } className="img-fluid" alt="Lavander" />
                 </div>
-                <div className="col">
+                <div className="col-lg-8 col-sm-12">
                     <div className="card-block px-2 mt-3 ml-4">
                         <div className="row mr-3">
                             <h5 className="mr-auto">{ name } </h5>
@@ -56,9 +52,9 @@ const ProductsItem : React.FC<IProductsItemProps> = ({ image, name, price, descr
                         <div className="row mt-3 mr-1 card-text-wrapper">
                             <p className="card-text"> { description } </p>
                         </div>
-                        <div className="row mt-3 mr-3">
-                            <Button content="Learn More" type={ ButtonTypes.Info } className="mr-auto" onClick={ btnHandler } />
-                            <Button content="Add to cart" type={ ButtonTypes.Success } className="mr-auto" onClick={ btnHandler } />
+                        <div className="row mt-3 mr-3 mb-4">
+                            <Link to={`/shop/${ name }/`} className="mx-auto"><Button content="Learn More" type={ ButtonTypes.Info } className="mr-auto" onClick={ btnHandler } /></Link>
+                            <Link to="/" className="mx-auto"><Button content="Add to cart" type={ ButtonTypes.Success } className="mr-auto" onClick={ btnHandler } /></Link>
                         </div>
                     </div>
                 </div>
