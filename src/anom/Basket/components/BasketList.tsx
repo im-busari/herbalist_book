@@ -19,12 +19,14 @@ const BasketList : React.FC<IBasketListProps> = () => {
             </div>
 
             <div className="row">
-                { data.products.map(({ image, name, price, pricePerAmount, _id }) => 
+                { data.products.map(({ image, name, price, pricePerAmount, _id, description }) => 
                     <BasketItem 
                         key={_id}
+                        _id={ _id }
                         image={ image }
                         name={ name }
                         price={ price }
+                        description = { description }
                         pricePerAmount={ pricePerAmount } />
                 )}
             </div>

@@ -21,7 +21,6 @@ const defaultValues = {
 
 const initialState : ApplicationState = {
   productsList: defaultValues,
-  productsDetails: defaultValues
 }
 const store = configureStore(history, initialState)
 

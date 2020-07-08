@@ -300,6 +300,7 @@ module.exports = function(webpackEnv) {
         ...(modules.webpackAliases || {}),
         "@shared-components": path.resolve(__dirname, '../src/lib/components/'),
         "@shared-constants": path.resolve(__dirname, '../src/lib/constants/'),
+        "@store": path.resolve(__dirname, '../src/store/'),
         "@layout": path.resolve(__dirname, '../src/layout/'),
       },
       plugins: [

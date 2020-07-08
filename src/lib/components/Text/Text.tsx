@@ -34,7 +34,7 @@ const JumbotronText = styled.div<StyledTextProps>`
 `
 
 const TitleText = styled.div<StyledTextProps>`
-    font-size: 40px;
+    font-size: ${({ fontSize }) => fontSize ? fontSize : "40px"};
     font-weight: 600;
     text-transform: uppercase;
     color: ${({ color }) => color ? color : colors.black};
@@ -72,12 +72,12 @@ const textComponentMapping = {
     [TextTypes.Vertical]: VerticalText,
 };
 
-const Text : React.FC<ITextProps> = ({ content, type, color, className }) => {
+const Text : React.FC<ITextProps> = ({ content, type, color, className, fontSize }) => {
 
     const TextComponent = textComponentMapping[type];
 
     return (
-        <TextComponent color={ color } className={ className } >
+        <TextComponent color={ color } className={ className } fontSize={fontSize}>
             { content }
         </TextComponent>
     )

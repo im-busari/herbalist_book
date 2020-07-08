@@ -60,6 +60,7 @@ const ShopIndexPage : React.FC<AllProps> = ({ loading, data, fetchRequest }) => 
                 <div className="row justify-content-center mt-5">
                         { data.map(product => 
                         <ProductsItem
+                            key={ product._id }
                             _id={ product._id }
                             image={ product.image }
                             name={ product.name }

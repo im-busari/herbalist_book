@@ -1,14 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { colors } from '@shared-constants/';
-
-interface IBasketItem {
-    key: string,
-    image: string,
-    name: string,
-    price: number,
-    pricePerAmount: string
-}
+import { IProduct } from '../../../store/products/types'
 
 const BasketItemCard = styled.div`
     background-color: ${ colors.white };
@@ -21,12 +14,12 @@ const BasketItemCard = styled.div`
     .changeAmountBtn:hover { color: ${colors.primaryGreen}; }
 `
 
-const BasketItem : React.FC<IBasketItem> = ({ key, image, name, price, pricePerAmount }) => {
+const BasketItem : React.FC<IProduct> = ({ _id, image, name, price, pricePerAmount }) => {
     
     const [quantity, setQuantity] = useState(1);
 
     return (
-        <BasketItemCard className="shadow-sm mt-3">
+        <BasketItemCard className="shadow-sm mt-3" key={ _id }>
             <div className="row no-gutters">
                 <div className="col-auto">
                     <img src={ image } className="img-fluid" alt={ name } />
